@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Perdeu">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
+        android:orientation="vertical"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/alfa_slab_one"
+            android:text="@string/ops_voc_atingiu_o_n_mero_m_xio_de_3_tentativas_e_n_o_conseguiu_acertar_o_n_mero_que_pena"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="407dp"
+            app:srcCompat="@drawable/game_over" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="384dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:onClick="Voltar"
+            android:text="@string/voltar" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

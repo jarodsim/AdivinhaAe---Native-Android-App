@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">AdivinhaNumero</string>
+    <string name="adivinha_a">Adivinha Aê</string>
+    <string name="eu_escolhi_um_n_mero_entre_0_e_15_tente_adivinhar_qual">Eu escolhi um número entre 0 e 15, tente adivinhar qual é!</string>
+    <string name="digite_o_n_mero">Digite o número</string>
+    <string name="verificar">Verificar</string>
+    <string name="tentativas_restantes_3">Tentativas restantes: 3</string>
+    <string name="digite_o_n_mero_2">Digite o número</string>
+    <string name="parab_ms_voc_acertou_com_2_tentativas">PARABÉMS! VOCÊ ACERTOU COM 2 TENTATIVAS</string>
+    <string name="winner">Winner</string>
+    <string name="ops_voc_atingiu_o_n_mero_m_xio_de_3_tentativas_e_n_o_conseguiu_acertar_o_n_mero_que_pena">Ops! Você atingiu o número máximo de 3 tentativas e não conseguiu acertar o número.</string>
+    <string name="voltar">Voltar</string>
+    <string name="btnVoltarResultado">Voltar</string>
+</resources>
