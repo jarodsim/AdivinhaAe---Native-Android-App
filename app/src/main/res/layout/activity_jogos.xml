@@ -19,6 +19,13 @@
             android:text="Histórico de jogos"
             android:textSize="24sp" />
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Data                                Status        Tentativas      Tempo"
+            android:textStyle="bold" />
+
         <ListView
             android:id="@+id/lvJogos"
             android:layout_width="wrap_content"

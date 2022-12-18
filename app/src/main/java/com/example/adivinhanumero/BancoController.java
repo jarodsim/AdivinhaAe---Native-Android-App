@@ -87,7 +87,7 @@ public class BancoController {
         return cursor;
     }
 
-    public String criarJogo(String data, String tentativas, int id_usuario, String tempo, String status) {
+    public String criarJogo(String data, String tentativas, int id_usuario, Long tempo, String status) {
         ContentValues valores;
         long resultado;
 

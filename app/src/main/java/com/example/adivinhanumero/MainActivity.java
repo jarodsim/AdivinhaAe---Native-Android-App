@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
     private Cursor cursor;
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                     i.putExtras(parametros);
                     startActivity(i);
                 } else {
-                    SetaTentativasRestantes(String.valueOf(tempo));
+                    SetaTentativasRestantes(TimeUnit.MILLISECONDS.toSeconds(tempo));
                     TextView subtituloTextView = findViewById(R.id.textSubTitulo);
                     TextView textotentativasRestantes = findViewById(R.id.textTentativasRestantes);
 
@@ -96,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void SetaTentativasRestantes(String tempo) {
+    public void SetaTentativasRestantes(Long tempo) {
         if (tentativas_restantes == 1) {
             crud = new BancoController(getBaseContext());
             Cursor usuarios = crud.listarUsuarios();

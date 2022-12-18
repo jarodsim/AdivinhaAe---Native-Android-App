@@ -41,7 +41,7 @@ public class CriaBanco extends SQLiteOpenHelper {
                 + ID_JOGO + " integer primary key autoincrement,"
                 + DATA_JOGO + " text,"
                 + TENTATIVAS_JOGO + " text,"
-                + TEMPO_JOGO + " text,"
+                + TEMPO_JOGO + " integer,"
                 + STATUS_JOGO + " text,"
                 + ID_USUARIO_JOGO + " integer"
                 + ")";
