@@ -35,7 +35,7 @@ public class Ganhou extends AppCompatActivity {
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String agora = formatador.format(new Date());
 
-        crud.criarJogo(agora, String.valueOf(tentativas), usuario_id, TimeUnit.MILLISECONDS.toSeconds(tempo), "ganhou");
+        crud.criarJogo(agora, String.valueOf((3 - tentativas) + 1), usuario_id, TimeUnit.MILLISECONDS.toSeconds(tempo), "ganhou");
 
         TextView text_resultado = findViewById(R.id.textResultado);
         text_resultado.setText("PARABÉNS! VOCÊ ACERTOU COM " + ((3 - tentativas) + 1) + " TENTATIVAS");
