@@ -20,11 +20,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:id="@+id/btnUserConfig"
+            android:layout_width="59dp"
+            android:layout_height="wrap_content"
+            android:onClick="IrParaEdicaoDeUsuario"
+            app:icon="@drawable/user" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/lato"
             android:text="@string/adivinha_a"
             android:textAlignment="center"
@@ -73,6 +80,14 @@
             android:layout_marginTop="25dp"
             android:onClick="Reiniciar"
             android:text="Reiniciar" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="386dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="10dp"
+            android:onClick="IrParaListagemDeJogos"
+            android:text="Histórico de Jogos" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

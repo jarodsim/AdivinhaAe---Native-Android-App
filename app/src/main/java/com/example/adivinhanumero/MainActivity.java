@@ -1,6 +1,7 @@
 package com.example.adivinhanumero;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -10,18 +11,35 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
+    private Cursor cursor;
+    private BancoController crud;
+
+
     final int random_number = new Random().nextInt(16);
     private int tentativas_restantes = 3;
+    Long tempoInicial = new Date().getTime();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        System.out.println(random_number);
+        crud = new BancoController(getBaseContext());
+
+        cursor = crud.listarUsuarios();
+
+        if (cursor.getCount() <= 0) {
+            Intent i = new Intent(MainActivity.this, DadosDoUsuarios.class);
+            Bundle parametros = new Bundle();
+            parametros.putString("metodo", "cadastro");
+            i.putExtras(parametros);
+            startActivity(i);
+        }
     }
 
     public void Verificar(View v) {
@@ -33,14 +51,17 @@ public class MainActivity extends AppCompatActivity {
             } else {
                 int numero = Integer.parseInt(numero_digitado.getText().toString());
 
+                Long tempoFinal = new Date().getTime();
+                Long tempo = tempoFinal - tempoInicial;
                 if (numero == random_number) {
                     Intent i = new Intent(this, Ganhou.class);
                     Bundle parametros = new Bundle();
                     parametros.putInt("tentativas", tentativas_restantes);
+                    parametros.putLong("tempo", tempo);
                     i.putExtras(parametros);
                     startActivity(i);
                 } else {
-                    SetaTentativasRestantes();
+                    SetaTentativasRestantes(String.valueOf(tempo));
                     TextView subtituloTextView = findViewById(R.id.textSubTitulo);
                     TextView textotentativasRestantes = findViewById(R.id.textTentativasRestantes);
 
@@ -75,8 +96,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void SetaTentativasRestantes() {
+    public void SetaTentativasRestantes(String tempo) {
         if (tentativas_restantes == 1) {
+            crud = new BancoController(getBaseContext());
+            Cursor usuarios = crud.listarUsuarios();
+            usuarios.moveToFirst();
+
+            int usuario_id = Integer.parseInt(usuarios.getString(0));
+            String tentativas = "3";
+
+            SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+            String agora = formatador.format(new Date());
+
+            crud.criarJogo(agora, tentativas, usuario_id, tempo, "perdeu");
+
             Intent i = new Intent(this, Perdeu.class);
             startActivity(i);
         } else {
@@ -88,5 +121,18 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
+    }
+
+    public void IrParaEdicaoDeUsuario(View v) {
+        Intent i = new Intent(MainActivity.this, DadosDoUsuarios.class);
+        Bundle parametros = new Bundle();
+        parametros.putString("metodo", "edicao");
+        i.putExtras(parametros);
+        startActivity(i);
+    }
+
+    public void IrParaListagemDeJogos(View v) {
+        Intent i = new Intent(MainActivity.this, Jogos.class);
+        startActivity(i);
     }
 }

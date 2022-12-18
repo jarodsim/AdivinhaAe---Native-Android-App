@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DadosDoUsuarios">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:id="@+id/tvTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Dados do usuário"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/ptNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Nome" />
+
+        <EditText
+            android:id="@+id/ptIdade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Idade" />
+
+        <EditText
+            android:id="@+id/ptEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:text="E-mail" />
+
+        <Button
+            android:id="@+id/btnSalvarUsuario"
+            android:layout_width="386dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="300dp"
+            android:onClick="CriarUsuario"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/btnUsuarioVoltar"
+            android:layout_width="389dp"
+            android:layout_height="62dp"
+            android:onClick="Voltar"
+            android:text="Voltar" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

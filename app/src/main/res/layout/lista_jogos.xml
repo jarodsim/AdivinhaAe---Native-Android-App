@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.gridlayout.widget.GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/data"
+            android:layout_width="158dp"
+            android:layout_height="wrap_content"
+            android:text="Data" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            app:layout_column="1"
+            app:layout_row="0" />
+
+        <TextView
+            android:id="@+id/tentativas"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:text="Tentativas"
+            app:layout_column="2"
+            app:layout_row="0" />
+
+        <TextView
+            android:id="@+id/tempo"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:text="Tempo" />
+    </androidx.gridlayout.widget.GridLayout>
+</RelativeLayout>
