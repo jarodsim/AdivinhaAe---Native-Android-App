@@ -82,8 +82,7 @@ public class BancoController {
 
         if (cursor != null)
             cursor.moveToFirst();
-//        db.close();
-        System.out.println(cursor.getCount());
+        db.close();
         return cursor;
     }
 
